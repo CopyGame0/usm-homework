@@ -1,0 +1,10 @@
+﻿id_producto;nombre;categoria;precio_base
+101;Hamburguesa;Comida;5000
+102;Pizza;Comida;7000
+103;Sushi;Comida;10000
+104;Ensalada;Comida;4500
+105;Empanadas;Comida;3000
+106;Paracetamol;Farmacia;2500
+107;Ibuprofeno;Farmacia;3500
+108;Shampoo;Higiene;4000
+109;Jabon;Higiene;1500

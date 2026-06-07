@@ -1,0 +1,5 @@
+id_pedido;cliente;tiempo_estimado;tiempo_real;costo;reclamo;id_producto
+1;Juan;30;45;8000;1;101
+2;Ana;25;20;6000;0;102
+3;Luis;40;55;12000;1;103
+4;Maria;20;18;5000;0;101

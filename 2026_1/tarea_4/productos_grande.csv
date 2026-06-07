@@ -1,0 +1,26 @@
+﻿id_producto;nombre;categoria;precio_base
+101;Hamburguesa;Comida;5000
+102;Pizza;Comida;7000
+103;Sushi;Comida;10000
+104;Ensalada;Comida;4500
+105;Empanadas;Comida;3000
+106;Paracetamol;Farmacia;2500
+107;Ibuprofeno;Farmacia;3500
+108;Shampoo;Higiene;4000
+109;Jabon;Higiene;1500
+110;Pasta de dientes;Higiene;2000
+111;Notebook;Tecnologia;450000
+112;Audifonos;Tecnologia;15000
+113;Cargador;Tecnologia;8000
+114;Mouse;Tecnologia;6000
+115;Teclado;Tecnologia;12000
+116;Leche;Supermercado;1200
+117;Pan;Supermercado;1800
+118;Huevos;Supermercado;3000
+119;Arroz;Supermercado;2500
+120;Fideos;Supermercado;2000
+121;Bebida;Supermercado;1800
+122;Cerveza;Supermercado;2500
+123;Chocolate;Snack;2000
+124;Papas fritas;Snack;1500
+125;Galletas;Snack;1800
