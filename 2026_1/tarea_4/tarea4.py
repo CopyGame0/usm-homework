@@ -15,10 +15,7 @@ def lista_pedidos(nombre_pedidos):
             
             costo.append(temp)
         contador+=1
-    
-    
-
-    print(costo)
+    #print(costo) #debug, delete later :v
     
     archivo_pedidos.close()
     return costo
@@ -27,13 +24,12 @@ def lista_pedidos(nombre_pedidos):
 def desempeño(nombre_pedidos, nombre_productos):
     
     tipos = {"Problemático":[],"Eficiente":[],"Costoso":[]}
-    archivo_pedidos = open(nombre_pedidos, 'r')
+    
     archivos_produc = open(nombre_productos, 'r')
     #    id_producto, nombre        , categoria, precio_base
     #e.g:   101     ,Hamburguesa    ,Comida    ,5000 
     
+    costos = lista_pedidos(nombre_pedidos) 
     
     
-    
-    archivo_pedidos.close()
     archivos_produc.close()
