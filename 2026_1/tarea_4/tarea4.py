@@ -50,6 +50,9 @@ def desempeño(nombre_pedidos, nombre_productos):
     for linea in archivo_pedidos:
         temp = linea.split(";")
         id_pedidos[temp[0]] = temp[1:]
-        
+        #{id_pedido: [cliente, tiempo_estimado, tiempo_real, costo, reclamo, id_producto]}
 
+    
+        
+    
     archivo_pedidos.close() 
