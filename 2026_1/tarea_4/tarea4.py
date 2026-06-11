@@ -85,3 +85,25 @@ def desempeño(nombre_pedidos, nombre_productos):
 #print(desempeño("pedidos.csv", "productos.csv")) #e.g, delte later :v
 
 #Pregunta 3
+
+def clasificar(archivo_pedidos,  archivo_productos, categoría):
+    tipos = desempeño(archivo_pedidos,  archivo_productos)
+
+    for criterio in tipos:
+        archivo = open(criterio+".txt", 'w')
+        contador = 0
+        for producto in tipos[criterio] and contador < 10:
+            temp = "#{0} pedido {1}: tiempo estimado {2} min, tiempo real {3} min, costo ${4}\n".format(contador+1, producto[1], producto[2], producto[3], producto[0])
+            archivo.write(temp)
+
+        archivo.close()
+
+    calificados = 0
+    
+    for criterio in tipos:
+        if tipos[criterio][-1] == categoría:
+            calificados += 1
+    return calificados
+
+#fix needed, delete later :v
+print(clasificar("pedidos.csv", "productos.csv", "Tecnologia")) 
