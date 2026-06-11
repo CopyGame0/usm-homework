@@ -47,12 +47,41 @@ def desempeño(nombre_pedidos, nombre_productos):
     archivo_pedidos = open(nombre_pedidos, 'r')
 
     id_pedidos = {}
+    contador = 0
     for linea in archivo_pedidos:
-        temp = linea.split(";")
-        id_pedidos[temp[0]] = temp[1:]
-        #{id_pedido: [cliente, tiempo_estimado, tiempo_real, costo, reclamo, id_producto]}
-
-    
-        
-    
+        if contador != 0:
+            temp = linea.split(";")
+            id_pedidos[temp[0]] = temp[1:]
+            #{id_pedido: [cliente, tiempo_estimado, tiempo_real, costo, reclamo, id_producto]}
+        contador += 1
     archivo_pedidos.close() 
+
+    lista_costos = []
+    for costo in costos_pedidos:
+        lista_costos.append(costo[1])
+    
+    promedio_costos = sum(lista_costos)/len(lista_costos)
+
+
+    for pedido in id_pedidos:
+        t_estimado = int(id_pedidos[pedido][1])
+        t_real = int(id_pedidos[pedido][2])
+        id = id_pedidos[pedido][-1].strip()
+
+        producto =[int(id_pedidos[pedido][3]), productos[id][0], t_estimado, t_real, productos[id][1]]
+
+        if id_pedidos[pedido][4] == "1": #revisa si hay reclamos
+            tipos["Problemático"].append(producto)
+        if t_real < t_estimado: # tiene retraso?
+            tipos["Eficiente"].append(producto)
+        if int(id_pedidos[pedido][3]) > promedio_costos: # costo mayor al promedio?
+            tipos["Costoso"].append(producto)
+
+        for tipo in tipos:
+            tipos[tipo].sort()
+            
+    return tipos
+        
+#print(desempeño("pedidos.csv", "productos.csv")) #e.g, delte later :v
+
+#Pregunta 3
