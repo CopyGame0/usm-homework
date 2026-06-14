@@ -119,4 +119,4 @@ def clasificar(archivo_pedidos,  archivo_productos, categoría):
     return total
 
 #fix needed, delete later :v
-print(clasificar("pedidos_grande.csv", "productos_grande.csv", "Tecnologia")) 
+#print(clasificar("pedidos_grande.csv", "productos_grande.csv", "Tecnologia")) 
