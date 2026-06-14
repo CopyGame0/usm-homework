@@ -4,13 +4,16 @@ def diccionario_productos(nombre_productos):
     #e.g:   101     ,Hamburguesa    ,Comida    ,5000 
 
     productos= {}
+    contador = 0
     for linea in archivos_produc:
         
-        temp = linea.split(";")
-        productos[temp[0]] = temp[1:]
-        #{id_producto: [nombre, categoria, precio_base]} tendremos un indice extra, pero es un diccionario asi que no importa :P
-    archivos_produc.close()
+        if contador != 0:    
+            temp = linea.split(";")
+            productos[temp[0]] = temp[1:]
+            #{id_producto: [nombre, categoria, precio_base]}
+        contador+=1
 
+    archivos_produc.close()
     return productos
 
 def diccionario_pedidios(nombre_pedidos):
@@ -97,23 +100,23 @@ def desempeño(nombre_pedidos, nombre_productos):
 
 def clasificar(archivo_pedidos,  archivo_productos, categoría):
     tipos = desempeño(archivo_pedidos,  archivo_productos)
-    calificados = 0
-
-
+    
+    total = 0
     for criterio in tipos:
         archivo = open(criterio+".txt", 'w')
         contador = 0
+        total += len(tipos[criterio])
+        
         for producto in tipos[criterio] :
             if producto[-1] != categoría and contador < 10:
                 temp = "#{0} pedido {1}: tiempo estimado {2} min, tiempo real {3} min, costo ${4}\n".format(contador+1, producto[1], producto[2], producto[3], producto[0])
                 archivo.write(temp)
                 contador+=1
-            elif producto[-1] == categoría:
-                calificados += 1
-           
+        
         archivo.close()
-  
-    return calificados
+   
+   
+    return total
 
 #fix needed, delete later :v
 print(clasificar("pedidos_grande.csv", "productos_grande.csv", "Tecnologia")) 
